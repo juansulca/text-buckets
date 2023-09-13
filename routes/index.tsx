@@ -12,14 +12,13 @@ export const handler: Handlers = {
     db.insertEntry(id, content);
 
     return new Response(id, { status: 201 });
-  }
+  },
 };
 
 export default function Home() {
   return (
-    <div class="w-3/4 px-4 py-8 mx-auto">
-      <h1>Let me hold that for you</h1>
-          <TextArea />
+    <div class="w-full py-8 mx-auto">
+      <TextArea />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import Entry from "../components/Entry.tsx";
+import CopyUrl from "../islands/CopyUrl.tsx";
+import Entry from "../islands/Entry.tsx";
 import { db } from "../utils/database.ts";
 
 export const handler: Handlers = {
@@ -7,14 +8,16 @@ export const handler: Handlers = {
     const { id } = ctx.params;
     const content = await db.getEntry(id);
     return ctx.render(content);
-  }
+  },
 };
 
 export default function EntryPage(props: PageProps<{ content: string }>) {
   const { content } = props.data;
 
   return (
-    <Entry text={content}/>
+    <div class="w-full py-8 mx-auto">
+      <Entry text={content} />
+      <CopyUrl />
+    </div>
   );
 }
-
