@@ -12,10 +12,10 @@ export default function CopyUrl() {
   };
 
   return (
-    <div class="flex items-center justify-center gap-2 py-3">
+    <div class="flex items-center justify-center gap-2 py-3 mt-4">
       <button
         type="button"
-        class="rounded bg-gray-200 py-4 px-12 text-sm font-medium text-gray-700 hover:text-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:hover:text-gray-100"
+        class="rounded bg-gray-200 py-3 px-10 text-sm font-medium text-gray-700 hover:text-gray-600 dark:bg-gray-700 dark:text-gray-200 dark:hover:text-gray-100"
         onClick={onClick}
       >
         {btnText}

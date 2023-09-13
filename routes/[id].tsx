@@ -7,6 +7,9 @@ export const handler: Handlers = {
   async GET(_req, ctx) {
     const { id } = ctx.params;
     const content = await db.getEntry(id);
+
+    if (!content) ctx.renderNotFound();
+
     return ctx.render(content);
   },
 };
